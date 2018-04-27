@@ -1,7 +1,7 @@
 assets:
   - .env
 steps:
-  - name: Install Drupal
+  - name: Install Drupal.
     plugin: Drupal
     runInstall: true
     profileName: standard
