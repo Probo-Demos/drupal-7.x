@@ -1,0 +1,7 @@
+assets:
+  - .env
+steps:
+  - name: Install Drupal.
+    plugin: Drupal
+    makeFile: d7make.make
+    runInstall: true
