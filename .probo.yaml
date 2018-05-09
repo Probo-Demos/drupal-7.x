@@ -5,3 +5,5 @@ steps:
     plugin: Drupal
     makeFile: d7make.make
     runInstall: true
+    makeForceComplete: false
+    makeArgs: --no-cache
