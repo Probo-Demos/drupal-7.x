@@ -8,8 +8,10 @@ steps:
   - name: Test with Lighthouse. (Lighthouse installed by default on all Probo Images!)
     plugin: Script
     script:
-      - lighthouse $BUILD_DOMAIN --output json --output-path /var/www/html/lighthouse-output.json
+      - lighthouse $BUILD_DOMAIN --output-path=/var/www/html/lighthouse-output.out --save-assets 
   - name: Display report URL.
     plugin: Script
     script:
-      - echo "Report available at $BUILD_DOMAIN/lighthouse-output.json"
+      - echo "HTML report available at $BUILD_DOMAIN/lighthouse-output.html"
+      - echo "Screenshots available at $BUILD_DOMAIN/lighthouse-output-0.screenshots.html"
+      - echo "JSON report available at $BUILD_DOMAIN/lighthouse-output-0.trace.json
