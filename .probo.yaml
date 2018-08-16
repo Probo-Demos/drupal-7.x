@@ -1,0 +1,19 @@
+steps:
+  - name: Install Drupal 7
+    plugin: Drupal
+    runInstall: true
+    profileName: standard
+    clearCaches: false
+    subDirectory: docroot
+  - name: Install the-a11y-machine npm package.
+    plugin: Script
+    script:
+      - npm install -g the-a11y-machine
+  - name: Test with a11ym tool.
+    plugin: Script
+    script:
+      - a11ym $BUILD_DOMAIN --standards WCAG2AA,HTML --output-directory /var/www/html/a11ym_output
+  - name: Display report URL.
+    plugin: Script
+    script:
+      - echo "a11ym report available at $BUILD_DOMAIN/a11ym_output"
