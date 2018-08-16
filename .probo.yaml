@@ -1,0 +1,15 @@
+steps:
+  - name: Install Drupal 7
+    plugin: Drupal
+    runInstall: true
+    profileName: standard
+    clearCaches: false
+    subDirectory: docroot
+  - name: Test with AChecker API.
+    plugin: Script
+    script:
+      - curl "https://achecker.ca/checkacc.php?uri=$BUILD_DOMAIN&id=e5229b0944f132f908d237f82ceb26bd75e99546&output=html&guide=STANCA,WCAG2-AA" -o "/var/www/html/achecker-report.html"
+  - name: Display report URL.
+    plugin: Script
+    script:
+      - echo "Report available at $BUILD_DOMAIN/achecker-report.html"
