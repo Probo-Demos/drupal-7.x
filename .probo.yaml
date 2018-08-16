@@ -1,0 +1,11 @@
+steps:
+  - name: Install Drupal 7
+    plugin: Drupal
+    runInstall: true
+    profileName: standard
+    clearCaches: false
+    subDirectory: docroot
+  - name: Test with WAVE API.
+    plugin: Script
+    script:
+      - curl "https://wave.webaim.org/api/request?key=PT5NqA9C1011&url=$BUILD_DOMAIN/&format=xml&reporttype=3" -o "/var/www/html/wave-webaim-report.xml"
