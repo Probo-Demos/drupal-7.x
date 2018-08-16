@@ -1,0 +1,15 @@
+steps:
+  - name: Install Drupal 7
+    plugin: Drupal
+    runInstall: true
+    profileName: standard
+    clearCaches: false
+    subDirectory: docroot
+  - name: Test with Lighthouse. (Lighthouse installed by default on all Probo Images!)
+    plugin: Script
+    script:
+      - lighthouse $BUILD_DOMAIN --output json --output-path /var/www/html/lighthouse-output.json
+  - name: Display report URL.
+    plugin: Script
+    script:
+      - echo "Report available at $BUILD_DOMAIN/lighthouse-output.json"
