@@ -7,7 +7,7 @@ steps:
     profileName: standard
     clearCaches: false
     subDirectory: docroot
-  - name: Import .env variables and posting notification to Slack..
+  - name: Import .env variables and posting notification to Slack.
     plugin: Script
     script: |
       source $ASSET_DIR/.env
