@@ -1,3 +1,4 @@
+image: proboci/ubuntu-14.04-lamp:php-5.5
 steps:
   - name: Check PHP mods installed.
     plugin: Script
@@ -11,10 +12,10 @@ steps:
     clearCaches: false
     subDirectory: docroot
     phpMods:
-      - php5.6-pgsql
-      - php5.6-pspell
-      - php5.6-recode
-      - php5.6-soap
+      - pgsql
+      - pspell
+      - recode
+      - soap
   - name: Check PHP mods installed.
     plugin: Script
     script: |
