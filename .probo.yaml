@@ -1,0 +1,11 @@
+steps:
+  - name: Install Drupal 7
+    plugin: Drupal
+    runInstall: true
+    profileName: standard
+    clearCaches: false
+    subDirectory: docroot
+  - name: Check PHP mods installed.
+    plugin: Script
+    script: |
+      php -m
