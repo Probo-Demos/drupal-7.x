@@ -10,6 +10,8 @@ steps:
       EMAIL: dev@example.com
       constant_1: example_1
       CONSTANT_2: example_2
+      _constant_3: example_3
+      _CONSTANT_4: example_4
   - name: Test phpConstants.
     plugin: Script
     script: |
@@ -19,5 +21,7 @@ steps:
         echo EMAIL;
         echo constant_1;
         echo CONSTANT_2;
+        echo _constant_3;
+        echo _CONSTANT_4;
       ?>
       EOT
