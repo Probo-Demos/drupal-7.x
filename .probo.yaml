@@ -1,0 +1,23 @@
+steps:
+  - name: Install Drupal 7
+    plugin: Drupal
+    runInstall: true
+    profileName: standard
+    clearCaches: false
+    subDirectory: docroot
+    phpConstants:
+      DEVUSER: Developer
+      EMAIL: dev@example.com
+      constant_1: example_1
+      CONSTANT_2: example_2
+  - name: Test phpConstants.
+    plugin: Script
+    script: |
+      cat <<EOT >> constants-example.php
+      <?php
+        echo DEVUSER;
+        echo EMAIL;
+        echo constant_1;
+        echo CONSTANT_2;
+      ?>
+      EOT
