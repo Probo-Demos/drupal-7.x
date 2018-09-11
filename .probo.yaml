@@ -13,7 +13,7 @@ steps:
   - name: Test phpConstants.
     plugin: Script
     script: |
-      cat <<EOT >> constants-example.php
+      cat <<EOT >> /var/www/html/constants-example.php
       <?php
         echo DEVUSER;
         echo EMAIL;
