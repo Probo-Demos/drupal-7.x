@@ -9,7 +9,7 @@ steps:
     profileName: standard
     clearCaches: false
     subDirectory: docroot
-    phpConstants:
+    phpMods:
       - php5.6-pgsql
       - php5.6-pspell
       - php5.6-recode
