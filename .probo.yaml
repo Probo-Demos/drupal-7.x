@@ -12,7 +12,7 @@ steps:
       CONSTANT_2: example_2
       _constant_3: example_3
       _CONSTANT_4: example_4
-  - name: Test phpConstants.
+  - name: Test defined constants.
     plugin: Script
     script: |
       cat <<EOT >> /var/www/html/constants-example.php
@@ -25,3 +25,4 @@ steps:
         echo _CONSTANT_4;
       ?>
       EOT
+      echo "View defined constants at $BUILD_DOMAIN/constants-example.php"
