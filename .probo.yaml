@@ -5,6 +5,8 @@ steps:
     profileName: standard
     clearCaches: false
     subDirectory: docroot
+    installPackages:
+      - optipng
   - name: Check if package is installed.
     plugin: Script
     script: |
