@@ -6,7 +6,7 @@ steps:
     clearCaches: false
     subDirectory: docroot
     apacheMods:
-      - mod-security
+      - ldap
   - name: Check Apache mods installed.
     plugin: Script
     script: |
