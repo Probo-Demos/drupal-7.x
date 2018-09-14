@@ -5,6 +5,8 @@ steps:
     profileName: standard
     clearCaches: false
     subDirectory: docroot
+    cliDefines:
+      Defines_1: testing123
   - name: Echo Defines_1 from CLI.
     plugin: Script
     script: |
