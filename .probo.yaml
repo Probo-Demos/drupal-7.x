@@ -5,6 +5,8 @@ steps:
     profileName: standard
     clearCaches: false
     subDirectory: docroot
+    apacheMods:
+      - security
   - name: Check Apache mods installed.
     plugin: Script
     script: |
