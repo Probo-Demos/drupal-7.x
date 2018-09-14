@@ -1,0 +1,13 @@
+steps:
+  - name: Install Drupal 7
+    plugin: Drupal
+    runInstall: true
+    profileName: standard
+    clearCaches: false
+    subDirectory: docroot
+    apacheMods:
+      - ldap
+  - name: Check Apache mods installed.
+    plugin: Script
+    script: |
+      apache2ctl -M
