@@ -1,0 +1,11 @@
+steps:
+  - name: Install Drupal 7
+    plugin: Drupal
+    runInstall: true
+    profileName: standard
+    clearCaches: false
+    subDirectory: docroot
+  - name: Echo Defines_1 from CLI.
+    plugin: Script
+    script: |
+      echo $Defines_1
