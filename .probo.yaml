@@ -8,5 +8,5 @@ steps:
   - name: Check if package is installed.
     plugin: Script
     script: |
-      dpkg -l | optipng
+      dpkg -l optipng
   
