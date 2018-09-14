@@ -1,0 +1,14 @@
+steps:
+  - name: Install Drupal 7
+    plugin: Drupal
+    runInstall: true
+    profileName: standard
+    clearCaches: false
+    subDirectory: docroot
+    installPackages:
+      - optipng
+  - name: Check if package is installed.
+    plugin: Script
+    script: |
+      dpkg -l optipng
+  
